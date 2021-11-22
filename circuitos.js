@@ -1,11 +1,12 @@
 class Circuitos{
 
-    constructor(nombre,ciudad,vueltas,kilometrosvuelta,dificultad){
+    constructor(nombre,ciudad,vueltas,kilometrosvuelta,rectas,curvas){
         this.nombre=nombre;
         this.ciudad=ciudad;
         this.vueltas=vueltas;
         this.kilometrosvuelta=kilometrosvuelta;
-        this.dificultad=dificultad;
+        this.rectas=rectas;
+        this.curvas=curvas;
     }
 
     getnombre(){
@@ -23,8 +24,6 @@ class Circuitos{
     gettotalkilometros(){
         return this.kilometrosvuelta*this.vueltas;
     }
-    getdificultad(){
-        return this.dificultad;
-    }
     
+   
 }

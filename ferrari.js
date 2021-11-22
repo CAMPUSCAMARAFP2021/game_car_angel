@@ -1,7 +1,13 @@
 class Coche extends Vehiculos{
 
-    constructor(marca,ruedas,gasolina,peso,color,combustion,acelerar,frenar,velomax,capacidad)
-    super(marca,ruedas,peso,color);
+    constructor(marca,gasolina,combustion,acelerar,frenar,velomax,capacidad){
+    super(marca);
+
+    this.acelerar=15;
+    this.frenar=10;
+    this.velomax=150;
+    this.capacidad=170;
+    }
 
     
 }
