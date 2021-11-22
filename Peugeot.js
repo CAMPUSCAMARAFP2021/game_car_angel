@@ -35,7 +35,10 @@ class Carrera {
     resultados = [];
     distancia = 100;
     instante = 0;
-
+    
+constructor(distance){
+    this.distancia=distance;
+}
     start(){
         while (this.coches.length=== this.resultados.length) {
             this.instante++;
