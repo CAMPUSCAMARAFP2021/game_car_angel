@@ -17,12 +17,13 @@ class Coches{
             this.vel = this.vel + this.acc;
             this.vel >= this.vmax ? this.vel = this.vmax : this.vel;
             this.dr = this.dr + this.vel;
-
+            this.gas=this.vel/100
     }
     frenar(){
         if(this.vel >= 20){
         this.vel=this.vel-this.deacc;
         this.dr = this.dr + this.vel;
+        this.gas=this.vel/100
         }else{
         this.acelerar();
         }
