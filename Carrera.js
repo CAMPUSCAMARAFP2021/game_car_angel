@@ -12,7 +12,6 @@ class Carrera {
         console.log(this.resultados.length)
             this.coches.map((coche)=>{
                 if(coche.ingame==true){
-                console.log(coche.jugabilidad)
                 console.log(`${coche.name }->${coche.dr}; v:${coche.vel}`)
                 if(coche.dr<this.circuito.distancia ){
                 this.juego(coche,this.circuito.pista[parseInt(coche.dr/100)]);
