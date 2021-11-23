@@ -1,6 +1,6 @@
 class Carrera {
     circuito= new Circuitos('marsella',3,['r','r','r','c','c','r','c','r','r'])
-    coches =  [new Coches(1,200,4,true), new Coches(2,230, 3,true),new Coches(3,300,6,true)];
+    coches =  [new Coches(1,200,4,true), new Coches(2,230, 3,true),new Coches(3,300,6,true),new Coches(4,250,4,true)];
     resultados = [];
     instante = 0;
     corriendo=true;
