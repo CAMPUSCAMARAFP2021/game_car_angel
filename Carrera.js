@@ -12,19 +12,22 @@ class Carrera {
             console.log(this.resultados.length)
             this.coches.map((coche) => {
                 if (coche.ingame == true) {
-                    if (coche.fuel >= 30) {
+                    if (coche.laps <= this.circuito.vueltas) {
                         console.log(`${coche.name}->${coche.dr}; v:${coche.vel}`)
                         if (coche.dr < this.circuito.distancia) {
                             this.juego(coche, this.circuito.pista[parseInt(coche.dr / 100)]);
                         } else {
-                            coche.ingame = false;
-                            this.resultados.push({ instante: this.instante, coche })
-                            if (this.resultados.length == this.coches.length) {
-                                this.corriendo = false;
-                            }
+                            coche.laps += 1;
+                            coche.dr -= this.circuito.distancia;
                         }
+
                     } else {
-                        coche.refuel();
+                        coche.ingame = false;
+                        this.resultados.push({ instante: this.instante, coche })
+                        if (this.resultados.length == this.coches.length) {
+                            this.corriendo = false;
+
+                        }
 
                     }
                 }

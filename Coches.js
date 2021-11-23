@@ -2,15 +2,16 @@ class Coches{
     vmax;
     acc;
     deacc;
-    fuel;
+    fuel=0;
     vel = 0;
     dr = 0;
+    laps=1;
     constructor(vmax, acc,deacc,ingame,tank){
         this.vmax = vmax;
         this.acc = acc;
         this.deacc=deacc;
-       this.ingame=ingame;
-       this.tank=tank;
+        this.ingame=ingame;
+        this.tank=tank;
         this.fuel=tank;
     }
 
@@ -35,7 +36,7 @@ class Coches{
     combustion(){
         this.fuel-=this.vel/100;
     }
-    
+
     refuel(){
         this.fuel+=10;
         this.fuel>this.tank ? this.gas=this.tank : this.fuel;
