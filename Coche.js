@@ -3,11 +3,12 @@ class Coches{
     acc;
     vel = 0;
     dr = 0;
-
-    constructor(name,vmax, acc,ingame){
+    deacc ;
+    constructor(name,vmax, acc,deacc,ingame){
         this.name=name;
         this.vmax = vmax;
         this.acc = acc;
+        this.deacc=deacc;
        this.ingame=ingame;
     }
     acelerar(){
@@ -16,8 +17,12 @@ class Coches{
             this.dr = this.dr + this.vel;
     }
     frenar(){
-        this.vel=this.vel-this.acc;
-        this.vel <= 0 ? this.vel=0 : this.vel;
+        if(this.vel >= 20){
+        this.vel=this.vel-this.deacc;
         this.dr = this.dr + this.vel;
+        }else{
+        this.acelerar();
+        }
+
     }
 }
