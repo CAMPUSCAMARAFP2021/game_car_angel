@@ -4,11 +4,11 @@ class Coches{
     vel = 0;
     dr = 0;
 
-    constructor(id, vmax, acc){
+    constructor(id,vmax, acc,enjuego){
         this.id=id;
         this.vmax = vmax;
         this.acc = acc;
-       
+       this.enjuego=enjuego;
     }
     acelerar(){
             this.vel = this.vel + this.acc;
