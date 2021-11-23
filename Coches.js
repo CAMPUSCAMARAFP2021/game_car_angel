@@ -2,7 +2,7 @@ class Coches{
     vmax;
     acc;
     deacc;
-    gas;
+    fuel;
     vel = 0;
     dr = 0;
     constructor(vmax, acc,deacc,ingame,tank){
@@ -11,19 +11,21 @@ class Coches{
         this.deacc=deacc;
        this.ingame=ingame;
        this.tank=tank;
-        this.gas=tank;
+        this.fuel=tank;
     }
+
     acelerar(){
             this.vel = this.vel + this.acc;
             this.vel >= this.vmax ? this.vel = this.vmax : this.vel;
             this.dr = this.dr + this.vel;
-            this.gas=this.vel/100
+            this.fuel-=this.vel/100;
     }
+
     frenar(){
         if(this.vel >= 20){
         this.vel=this.vel-this.deacc;
         this.dr = this.dr + this.vel;
-        this.gas=this.vel/100
+        this.fuel-=this.vel/100;
         }else{
         this.acelerar();
         }
@@ -31,6 +33,8 @@ class Coches{
     }
     
     refuel(){
-    
+        this.fuel+=15;
+        this.fuel>this.tank ? this.gas=this.tank : this.fuel;
     }
+
 }
