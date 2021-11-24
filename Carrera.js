@@ -1,6 +1,6 @@
 class Carrera {
-    circuito = new Circuitos('marsella', 3, ['r', 'r', 'r', 'c', 'c', 'c', 'c', 'r', 'r', 'r', 'r', 'c', 'r', 'r'])
-    coches = [new Ferrari(200, 4, 2, true), new Tesla(230, 3, 1, true)];
+    circuito = new Circuito('marsella', 3, ['r', 'r', 'r', 'c', 'c', 'c', 'c', 'r', 'r', 'r', 'r', 'c', 'r', 'r'])
+    coches = [new Coche('ferrari',200, 4, 2, true), new Coche('tesla',230, 3, 1, true)];
     resultados = [];
     instante = 0;
     corriendo = true;
@@ -10,7 +10,6 @@ class Carrera {
     }
 
     start() {
-
         while (this.corriendo) {
             this.instante++;
             //console.log(this.resultados.length)
@@ -25,21 +24,15 @@ class Carrera {
                             coche.dr -= this.circuito.distancia;
                             this.onLapFinish(coche);
                         }
-
                     } else {
                         coche.ingame = false;
                         this.resultados.push({ instante: this.instante, coche })
                         if (this.resultados.length == this.coches.length) {
                             this.corriendo = false;
-
                         }
-
                     }
                 }
-
-
             })
-
         }
         this.onFinish(this.resultados);
     }
