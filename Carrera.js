@@ -20,7 +20,6 @@ class Carrera {
                             coche.laps += 1;
                             coche.dr -= this.circuito.distancia;
                         }
-
                     } else {
                         coche.ingame = false;
                         this.resultados.push({ instante: this.instante, coche })
