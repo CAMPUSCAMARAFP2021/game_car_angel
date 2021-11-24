@@ -6,7 +6,6 @@ class Carrera {
     corriendo = true;
 
     start() {
-
         while (this.corriendo) {
             this.instante++;
             console.log(this.resultados.length)
@@ -25,15 +24,10 @@ class Carrera {
                         this.resultados.push({ instante: this.instante, coche })
                         if (this.resultados.length == this.coches.length) {
                             this.corriendo = false;
-
                         }
-
                     }
                 }
-
-
             })
-
         }
         console.log(this.resultados)
     }
