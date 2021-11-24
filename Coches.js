@@ -22,13 +22,13 @@ class Coches{
             this.combustion();
     }
 
-    frenar(){
-        if(this.vel >= 20){
-        this.vel=this.vel-this.deacc;
-        this.dr = this.dr + this.vel;
-        this.combustion();
-        }else{
-        this.acelerar();
+    frenar() {
+        if(this.vel >= 20) {
+            this.vel=this.vel-this.deacc;
+            this.dr = this.dr + this.vel;
+            this.combustion();
+        } else {
+            this.acelerar();
         }
 
     }

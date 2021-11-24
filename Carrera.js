@@ -4,12 +4,16 @@ class Carrera {
     resultados = [];
     instante = 0;
     corriendo = true;
+    constructor(onFinish,onLapFinish) {
+        this.onFinish = onFinish;
+        this.onLapFinish = onLapFinish;
+    }
 
     start() {
 
         while (this.corriendo) {
             this.instante++;
-            console.log(this.resultados.length)
+            //console.log(this.resultados.length)
             this.coches.map((coche) => {
                 if (coche.ingame == true) {
                     if (coche.laps <= this.circuito.vueltas) {
@@ -19,6 +23,7 @@ class Carrera {
                         } else {
                             coche.laps += 1;
                             coche.dr -= this.circuito.distancia;
+                            this.onLapFinish(coche);
                         }
 
                     } else {
@@ -36,7 +41,7 @@ class Carrera {
             })
 
         }
-        console.log(this.resultados)
+        this.onFinish(this.resultados);
     }
 
     juego(coche, posicion) {

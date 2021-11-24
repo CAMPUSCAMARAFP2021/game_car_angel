@@ -6,3 +6,4 @@ class Ferrari extends Coches{
         
     }
 }
+const ferrari = new Coches()
