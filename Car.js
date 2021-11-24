@@ -1,4 +1,4 @@
-class Coche {
+class Car {
     vmax;
     acc;
     deacc;
@@ -17,20 +17,20 @@ class Coche {
             this.fuel=tank;
         }
 
-    acelerar() {
+    accelerate() {
             this.vel = this.vel + this.acc;
             this.vel >= this.vmax ? this.vel = this.vmax : this.vel;
             this.dr = this.dr + this.vel;
             this.combustion();
     }
 
-    frenar() {
+    brake() {
         if(this.vel >= 20) {
             this.vel=this.vel-this.deacc;
             this.dr = this.dr + this.vel;
             this.combustion();
         } else {
-            this.acelerar();
+            this.accelerate();
         }
     }
 
