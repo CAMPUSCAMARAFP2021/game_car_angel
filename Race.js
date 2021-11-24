@@ -15,13 +15,13 @@ class Race {
             //console.log(this.result.length)
             this.car.map((car) => {
                 if (car.ingame == true) {
-                    if (car.laps <= this.circuit.vueltas) {
+                    if (car.laps <= this.circuit.laps) {
                         console.log(`${car.name}->${car.dr}; v:${car.vel}`)
-                        if (car.dr < this.circuit.distancia) {
-                            this.juego(car, this.circuit.pista[parseInt(car.dr / 100)]);
+                        if (car.dr < this.circuit.distance) {
+                            this.game(car, this.circuit.track[parseInt(car.dr / 100)]);
                         } else {
                             car.laps += 1;
-                            car.dr -= this.circuit.distancia;
+                            car.dr -= this.circuit.distance;
                             this.onLapFinish(car);
                         }
                     } else {
@@ -37,7 +37,7 @@ class Race {
         this.onFinish(this.result);
     }
 
-    juego(car, position) {
+    game(car, position) {
         switch (position) {
             case 'r':
                 car.accelerate();

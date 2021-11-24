@@ -7,8 +7,8 @@ class Car {
     dr = 0;
     laps=1;
 //abc
-        constructor(model,vmax, acc,deacc,ingame,tank){
-            this.model = model;
+        constructor(name,vmax, acc,deacc,ingame,tank){
+            this.name = name;
             this.vmax = vmax;
             this.acc = acc;
             this.deacc=deacc;
